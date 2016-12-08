@@ -17,7 +17,10 @@
   }
   .answer {
     cursor: pointer;
-    background: #FFE599;
+    background: lighten(#FFE599,2%);
+    &:hover {
+      background: darken(#FFE599,5%);
+    }
     padding: 2px;
     border-radius: 2px;
     margin: 4px;
