@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title><%= json.project.seo_title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="__sync_contentCategory" content="meterA">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- scripts for stand-alone projects, comment for embedded projects -->
+    <!-- <%= !json.project.embedded ? t.include("partials/_paywall.html") : t.include("partials/_embedframe.html") %> -->
+    <!-- also replace <body> with <body is="responsive-body"> -->
+
+    <%= t.include("partials/_head.html") %>
+
+  </head>
+
+  <%= !json.project.embedded ? "<body>" : "<body is='reponsive-body'>" %>
+
+    <%= t.include("partials/_nav.html") %>
+
+    <div class="title-container">
+      <h1 class="title long">Quiz: How well do you know The San Francisco Chronicle?</h1>
+      <div class="deck">We here at the Chronicle are experts on the Chronicle. See how you measure up.</div>
+      <p class="author">By Emma O'Neill</a></p>
+      <p class="date">December 2016</p>
+    </div>
+
+    <div class="quiz-container">
+
+    <% csv.quiz_data.forEach(function(q,qdx) { %>
+
+      <div class="quiz-box">
+        <div class="question"><%=q.question%></div>
+        <% csv.answers_data.forEach(function(a,adx) { %>
+          <% if (a.id == q.id){ %>
+            <div class="answer"><span class="num"><%=a.num%></span><%=a.answer%></div>
+          <% } %>
+        <% }); %>
+      </div>
+
+    <% }); %>
+  </div>
+
+    <%= t.include("partials/_footer.html") %>
+
+    <script>
+
+    </script>
+
+    <script src="app.js" async></script>
+    <%= t.include("partials/_helloSFC.html") %>
+
+  </body>
+</html>
