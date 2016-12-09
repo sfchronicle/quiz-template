@@ -1,6 +1,17 @@
 @yellow: #FFE599;
 @dark-yellow: darken(#FFE599,20%);
 
+.title-container {
+  padding-top: 50px;
+}
+
+.small-man {
+  max-width: 60px;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
 .quiz-container {
   max-width: 900px;
   margin: auto;
@@ -39,6 +50,9 @@
   }
   .result {
     padding: 10px;
+    .fa {
+      padding-right: 10px;
+    }
     .fa-check-circle-o {
       color: green;
     }
@@ -61,7 +75,7 @@
   margin: auto;
 }
 
-.grade {
+.grade, .grade-commentary {
   font-family: @med-graphics;
   text-align: center;
   margin: auto;

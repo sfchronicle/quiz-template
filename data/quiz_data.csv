@@ -1,4 +1,4 @@
-id,question,image
-0,"Who is the editor in chief of the Chronicle?",
-1,"What is the best lunch place near the Chronicle?",
-2,"Which paper is the most amazingest on the entire West Coast?",
+id,question,yes-answer,no-answer,image
+0,"Who is the editor in chief of the Chronicle?","That's right! Audrey Cooper has been editor-in-chief since 2015.","Not exactly! Audrey Cooper is editor-in-chief of the Chronicle.",
+1,"What is the best lunch place near the Chronicle?","Absolutely, you can't beat the food trucks for convenience and deliciousness.","Nope, it's definitely the food trucks.",
+2,"Which paper is the most amazingest on the entire West Coast?","The Chronicle has unparalleled reporting.","No, the Chronicle has the most inprepid and inspired reporters, though you can be forgiven for appreciating other good reporting as well.",
