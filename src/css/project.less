@@ -1,3 +1,6 @@
+@yellow: #FFE599;
+@dark-yellow: darken(#FFE599,20%);
+
 .quiz-container {
   max-width: 900px;
   margin: auto;
@@ -17,9 +20,13 @@
   }
   .answer {
     cursor: pointer;
-    background: lighten(#FFE599,2%);
+    background: lighten(@yellow,2%);
     &:hover {
-      background: darken(#FFE599,5%);
+      background: darken(@yellow,5%);
+    }
+    &.active {
+      background: darken(@yellow,20%);
+      color: white;
     }
     padding: 2px;
     border-radius: 2px;
@@ -28,6 +35,15 @@
       font-family: @bold-graphics;
       padding-right: 20px;
       padding-left: 10px;
+    }
+  }
+  .result {
+    padding: 10px;
+    .fa-check-circle-o {
+      color: green;
+    }
+    .fa-times-circle-o {
+      color: red;
     }
   }
 }
@@ -43,4 +59,26 @@
 .dont-miss {
   max-width: 1000px;
   margin: auto;
+}
+
+.grade {
+  font-family: @med-graphics;
+  text-align: center;
+  margin: auto;
+  padding-top: 20px;
+  font-size: 16px;
+}
+
+.grade-check {
+  font-family: @block-graphics;
+  text-align: center;
+  margin: auto;
+  border: 2px solid @dark-yellow;
+  border-radius: 4px;
+  padding: 4px;
+  width: 300px;
+  &:hover {
+    background: @dark-yellow;
+    color: white;
+  }
 }

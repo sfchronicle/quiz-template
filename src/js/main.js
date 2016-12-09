@@ -7,18 +7,35 @@ function hasClass(element, cls) {
 
 var N = questionsData.length;
 var Nlist = Array.apply(null, {length: N}).map(Number.call, Number);
+var Gradinglist = new Array(N);
+Gradinglist = Gradinglist.fill(-1);
+
+console.log(Gradinglist);
+
 Nlist.forEach(function(nn){
   document.getElementById("answer-box-"+nn).addEventListener("click", function(e) {
     var item = closest(e.target, (".answer"));
     if (!item) return;
-    console.log(item);
-    console.log(item.classList);
-    console.log("#result"+nn);
+    $(".answer"+nn).removeClass("active");
+    item.className += " active";
     if (hasClass(item,"x")) {
-      console.log("YES!");
-      document.querySelector("#result"+nn).innerHTML = "You got it!";
+      document.querySelector("#result"+nn).innerHTML = "<i class='fa fa-check-circle-o' aria-hidden='true'></i> That's right! You're a rock star!";
+      Gradinglist[nn] = 1;
     } else {
-      document.querySelector("#result"+nn).innerHTML = "Try again!";
+      document.querySelector("#result"+nn).innerHTML = "<i class='fa fa-times-circle-o' aria-hidden='true'></i> Try again!";
+      Gradinglist[nn] = 0;
     }
   });
+});
+
+document.getElementById("grade-check").addEventListener("click",function(){
+  console.log("checking result");
+  console.log(Gradinglist.indexOf(-1));
+  if (Gradinglist.indexOf(-1) > -1){
+    document.querySelector("#grade").innerHTML = "<div class=grade>You missed a question! Finish filling out the quiz and check back!</div>";
+  } else {
+    var sum = Gradinglist.reduce(function(a, b) { return a + b; }, 0);
+    document.querySelector("#grade").innerHTML = "<div class=grade>You got "+sum+" / "+N+"!</div>";
+  }
+
 });

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 
+    <!-- TAKE THIS OUT!!! -->
+    <script src="http://projects.sfchronicle.com/shared/js/jquery.min.js"></script>
+
     <!-- scripts for stand-alone projects, comment for embedded projects -->
     <!-- <%= !json.project.embedded ? t.include("partials/_paywall.html") : t.include("partials/_embedframe.html") %> -->
     <!-- also replace <body> with <body is="responsive-body"> -->
@@ -36,15 +39,20 @@
         <div id="answer-box-<%=q.id%>">
           <% csv.answers_data.forEach(function(a,adx) { %>
             <% if (a.id == q.id){ %>
-              <div class="answer <%=a.correct%>" id="answer<%=q.id%><%=a.num%>"><span class="num"><%=a.num%></span><%=a.answer%></div>
+              <div class="answer answer<%=q.id%> <%=a.correct%>" id="answer<%=q.id%><%=a.num%>"><span class="num"><%=a.num%></span><%=a.answer%></div>
             <% } %>
           <% }); %>
         </div>
-        <div id="result<%=q.id%>"></div>
+        <div class="result" id="result<%=q.id%>"></div>
       </div>
 
     <% }); %>
-  </div>
+    </div>
+
+    <div class="grade-container">
+      <div class="grade-check" id="grade-check">See your result</div>
+      <div id="grade"></div>
+    </div>
 
     <%= t.include("partials/_footer.html") %>
 
