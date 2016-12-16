@@ -29,20 +29,20 @@
         <div class="small-man">
           <%= t.include("assets/logos/QUESTIONMAN.svg") %>
         </div>
-        <h1 class="title long">Quiz: How well do you know The San Francisco Chronicle?</h1>
-        <div class="deck">We here at the Chronicle are experts on the Chronicle. See how you measure up.</div>
-        <p class="author">By Emma O'Neill</a></p>
+        <h1 class="title long">Take the Chronicle's 2016 Geo Quiz!</h1>
+        <div class="deck">We here at the Chronicle are experts on geography. See how you measure up.</div>
+        <p class="author">By Spud Hilton</a></p>
         <p class="date">December 2016</p>
       </div>
 
       <div class="quiz-container">
 
-      <% csv.quiz_data.forEach(function(q,qdx) { %>
+      <% csv.spud_quiz_data.forEach(function(q,qdx) { %>
 
         <div class="quiz-box">
           <div class="question"><%=q.question%></div>
           <div id="answer-box-<%=q.id%>">
-            <% csv.answers_data.forEach(function(a,adx) { %>
+            <% csv.spud_answers_data.forEach(function(a,adx) { %>
               <% if (a.id == q.id){ %>
                 <div class="answer answer<%=q.id%> <%=a.correct%>" id="answer<%=q.id%><%=a.num%>"><span class="num"><%=a.num%></span><%=a.answer%></div>
               <% } %>
@@ -64,9 +64,9 @@
     <%= t.include("partials/_footer.html") %>
 
     <script>
-      var questionsData = <%= JSON.stringify(csv.quiz_data) %>;
-      var answersData = <%= JSON.stringify(csv.answers_data) %>;
-      var gradeData = <%= JSON.stringify(csv.grading_data) %>;
+      var questionsData = <%= JSON.stringify(csv.spud_quiz_data) %>;
+      var answersData = <%= JSON.stringify(csv.spud_answers_data) %>;
+      var gradeData = <%= JSON.stringify(csv.spud_grading_data) %>;
     </script>
 
     <script src="app.js" async></script>

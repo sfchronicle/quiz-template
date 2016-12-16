@@ -19,11 +19,11 @@ Nlist.forEach(function(nn){
       item.className += " active";
       if (hasClass(item,"x")) {
         console.log(questionsData[nn]);
-        document.querySelector("#result"+nn).innerHTML = "<i class='fa fa-check-circle-o' aria-hidden='true'></i> "+ questionsData[nn]["yes-answer"];
+        document.querySelector("#result"+nn).innerHTML = "<i class='fa fa-check-circle-o' aria-hidden='true'></i> That's right! "+ questionsData[nn]["answer"];
         Gradinglist[nn] = 1;
       } else {
         console.log(questionsData[nn]);
-        document.querySelector("#result"+nn).innerHTML = "<i class='fa fa-times-circle-o' aria-hidden='true'></i> "+ questionsData[nn]["no-answer"];
+        document.querySelector("#result"+nn).innerHTML = "<i class='fa fa-times-circle-o' aria-hidden='true'></i> Not exactly! "+ questionsData[nn]["answer"];
         Gradinglist[nn] = 0;
       }
     }
