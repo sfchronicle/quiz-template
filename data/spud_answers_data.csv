@@ -8,7 +8,7 @@ id,num,answer,correct
 1,D,Leland Stanford,
 2,A,Silver mines,
 2,B,"El Dorado, lost city of gold",
-2,C,Bird poop,
+2,C,Bird poop,x
 2,D,Slave labor,
 3,A,A miniature replica of Nortre Dame,
 3,B,His head,x
@@ -35,7 +35,7 @@ id,num,answer,correct
 8,D,Tennessee,
 9,A,"Emperor Norton, local eccentric",
 9,B,"Joe Montana, Hall of Fame quarterback",x
-9,C,"""Big Sky"" O'Hara, Barbary Coast-era madam",
+9,C,"“Big Sky” O'Hara, Barbary Coast-era madam",
 9,D,"Willie Brown, former mayor",
 10,A,TRUE,x
 10,B,FALSE,

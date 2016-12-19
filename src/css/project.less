@@ -24,6 +24,9 @@
     font-size: 16px;
     text-align: left;
     padding-bottom: 50px;
+    @media @mobile {
+      padding-bottom: 30px;
+    }
   }
   .question {
     font-size: 18px;
@@ -31,6 +34,15 @@
     padding-bottom: 10px;
     margin-bottom: 20px;
     border-bottom: 1px solid @dark-gray;
+    .qnum {
+      padding-right: 15px;
+      font-family: @bold-graphics;
+      font-size: 25px;
+    }
+    @media @mobile {
+      padding: 0 10px;
+      padding-bottom: 10px;
+    }
   }
   .answer {
     cursor: pointer;
@@ -43,6 +55,9 @@
       color: white;
     }
     padding: 2px;
+    @media @mobile {
+      padding: 2px 6px;
+    }
     border-radius: 2px;
     margin: 4px;
     .num {
@@ -90,12 +105,21 @@
 }
 .grade {
   font-size: 40px;
+  &.small {
+    font-size: 25px;
+  }
+  @media @mobile {
+    font-size: 33px;
+  }
 }
 #grade {
   width: 80%;
   margin: auto;
   background: lighten(@gray-blue,40%);
   margin-top: 20px;
+  @media @mobile {
+    width: 90%;
+  }
 }
 
 .grade-check {
@@ -109,5 +133,8 @@
   &:hover {
     background: @dark-yellow;
     color: white;
+  }
+  @media @mobile {
+    width: 90%;
   }
 }

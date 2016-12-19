@@ -29,9 +29,9 @@
         <div class="small-man">
           <%= t.include("assets/logos/QUESTIONMAN.svg") %>
         </div>
-        <h1 class="title long">Take the Chronicle's 2016 Geo Quiz!</h1>
-        <div class="deck">We here at the Chronicle are experts on geography. See how you measure up.</div>
-        <p class="author">By Spud Hilton</a></p>
+        <h1 class="title long">2016 Chronicle Travel Geography Quiz</h1>
+        <div class="deck">Sixteen questions on physical, political and cultural geology to challenge your global savvy – and to share a few fun facts.</div>
+        <p class="author">By John Flinn and Spud Hilton</a></p>
         <p class="date">December 2016</p>
       </div>
 
@@ -40,7 +40,11 @@
       <% csv.spud_quiz_data.forEach(function(q,qdx) { %>
 
         <div class="quiz-box">
-          <div class="question"><%=q.question%></div>
+          <% if (qdx == 15) { %>
+            <div class="question"><span class="qnum">Bonus</span><%=q.question%></div>
+          <% } else { %>
+            <div class="question"><span class="qnum"><%=qdx+1%></span><%=q.question%></div>
+          <% } %>
           <div id="answer-box-<%=q.id%>">
             <% csv.spud_answers_data.forEach(function(a,adx) { %>
               <% if (a.id == q.id){ %>
