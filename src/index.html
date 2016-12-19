@@ -8,12 +8,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 
-    <!-- TAKE THIS OUT!!! -->
-    <script src="http://projects.sfchronicle.com/shared/js/jquery.min.js"></script>
-
-    <!-- scripts for stand-alone projects, comment for embedded projects -->
-    <!-- <%= !json.project.embedded ? t.include("partials/_paywall.html") : t.include("partials/_embedframe.html") %> -->
-    <!-- also replace <body> with <body is="responsive-body"> -->
+    <%= !json.project.embedded ? t.include("partials/_paywall.html") : t.include("partials/_embedframe.html") %>
 
     <%= t.include("partials/_head.html") %>
 

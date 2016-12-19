@@ -1,6 +1,16 @@
 @yellow: #FFE599;
 @dark-yellow: darken(#FFE599,20%);
 
+.social-block {
+  text-align: center;
+  padding-bottom: 20px;
+  .social-final {
+    padding: 2px 6px;
+    margin: 2px;
+    font-size: 22px;
+  }
+}
+
 .title-container {
   padding-top: 50px;
 }
@@ -101,6 +111,7 @@
   font-size: 16px;
 }
 .grade-commentary {
+  font-size: 20px;
   padding-top: 0;
 }
 .grade {
@@ -115,10 +126,22 @@
 #grade {
   width: 80%;
   margin: auto;
-  background: lighten(@gray-blue,40%);
+  // background: lighten(@gray-blue,40%);
   margin-top: 20px;
   @media @mobile {
     width: 90%;
+  }
+  &.active {
+    border: 1px #b2b2b2 solid;
+  }
+}
+
+.grade-gif {
+  width: 200px;
+  margin: auto;
+  padding-bottom: 20px;
+  img {
+    width: 100%;
   }
 }
 

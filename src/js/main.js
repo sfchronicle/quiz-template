@@ -29,21 +29,34 @@ Nlist.forEach(function(nn){
 });
 
 document.getElementById("grade-check").addEventListener("click",function(){
-  console.log("checking result");
-  console.log(Gradinglist.indexOf(-1));
+
   if (Gradinglist.indexOf(-1) > -1){
     document.querySelector("#grade").innerHTML = "<div class='grade small'>You missed a question! Finish filling out the quiz and check back!</div>";
   } else {
     var sum = Gradinglist.reduce(function(a, b) { return a + b; }, 0);
-    console.log(sum);
     var html_str = "<div class='grade'>You got "+sum+" / "+N+"!</div>";
     gradeData.forEach(function(g){
-      console.log(g);
-      if ((sum <= g["max"]) && (sum > g["min"])) {
+      if ((sum <= g["max"]) && (sum >= g["min"])) {
+        html_str +="<div class='grade-gif'><img src='./assets/gifs/"+g["gif"]+"'></div>";
         html_str +="<div class='grade-commentary'>"+g["answer"]+"</div>";
+
+        // putting in specialized sharing links
+        html_str +="<div class='social-block'>"
+
+          // email link
+          html_str +="<div class='link social-final'><a id='mail-icon' title='Share via email' href='mailto:?subject=\"Take the quiz!\"&body=\"I got "+sum+" / 16! Test your geography skills by taking our quiz! http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz\" '><i class='fa fa-envelope' aria-hidden='true'></i></a></div>";
+
+          // facebook link
+          html_str += "<div class='link social-final'><a id='facebook-icon' title='Share on Facebook' href='#' target='_blank' onclick='window.open(\"https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz\", \"facebook-share-dialog\", \"width=626,height=436\"); return false;'><i class='fa fa-facebook'></i></a></div>";
+
+          // twitter link
+          html_str += "<div class='link social-final'><a id='twitter-icon' title='Share on Twitter' href='https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz&text=\"I got "+sum+" / 16! Test your geography skills by taking our quiz!\" '><i class='fa fa-twitter'></i></a></div>";
+        html_str += "</div>"
+
       }
-    })
+    });
     document.querySelector("#grade").innerHTML = html_str;
   }
+  document.getElementById("grade").className = "active";
 
 });

@@ -1,7 +1,8 @@
 id,num,answer,correct
-0,A,Newfoundland,x
-0,B,Chihuahua,
+0,A,Newfoundland,
+0,B,Chihuahua,x
 0,C,Pyrenees,
+0,D,Yorkshire,
 1,A,Franklin D. Roosevelt,
 1,B,Andrew Carnegie,x
 1,C,Abraham Lincoln,
@@ -13,6 +14,7 @@ id,num,answer,correct
 3,A,A miniature replica of Nortre Dame,
 3,B,His head,x
 3,C,The hand of Saint Clotilde,
+3,D,A cask of beer,
 4,A,Libya and the Federated States of Micronesia,
 4,B,Libya and Burma,x
 4,C,Burkina Faso and Togo,
@@ -22,9 +24,9 @@ id,num,answer,correct
 5,C,Guangdong,
 5,D,Beijing,
 6,A,New Delhi,
-6,B,New York ,
+6,B,New York,
 6,C,Liverpool,x
-6,D,Vienna,
+6,D,Las Vegas,
 7,A,Oxford University,x
 7,B,The Aztec Empire,
 7,C,Kublai Khan's reign as emperor of China,
