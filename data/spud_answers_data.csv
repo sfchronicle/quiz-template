@@ -13,13 +13,13 @@ id,num,answer,correct
 2,D,Slave labor,
 3,A,A miniature replica of Nortre Dame,
 3,B,His head,x
-3,C,The hand of Saint Clotilde,
+3,C,The hand of Ste. Clotilde,
 3,D,A cask of beer,
 4,A,Libya and the Federated States of Micronesia,
-4,B,Libya and Burma,x
+4,B,Libya and Myanmar,x
 4,C,Burkina Faso and Togo,
-4,D,Nauru and the Duch of Grand Fenwick,
-5,A,Chendu,
+4,D,Nauru and the Duchy of Grand Fenwick,
+5,A,Chengdu,
 5,B,Guangzhou,x
 5,C,Guangdong,
 5,D,Beijing,
@@ -28,7 +28,7 @@ id,num,answer,correct
 6,C,Liverpool,x
 6,D,Las Vegas,
 7,A,Oxford University,x
-7,B,The Aztec Empire,
+7,B,The Aztec empire,
 7,C,Kublai Khan's reign as emperor of China,
 7,D,The Chicago Cubs,
 8,A,Montana,
@@ -39,8 +39,8 @@ id,num,answer,correct
 9,B,"Joe Montana, Hall of Fame quarterback",x
 9,C,"“Big Sky” O'Hara, Barbary Coast-era madam",
 9,D,"Willie Brown, former mayor",
-10,A,TRUE,x
-10,B,FALSE,
+10,A,True,x
+10,B,False,
 11,A,China,
 11,B,Brazil,
 11,C,Russia,x
@@ -49,8 +49,8 @@ id,num,answer,correct
 12,B,Chhatrapati Shivaji International,
 12,C,Hong Kong International,
 12,D,John F. Kennedy International,x
-13,A,TRUE,
-13,B,FALSE,x
+13,A,True,
+13,B,False,x
 14,A,Delaware,
 14,B,California,x
 14,C,Colorado,
