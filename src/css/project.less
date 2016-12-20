@@ -1,6 +1,13 @@
 @yellow: #FFE599;
 @dark-yellow: darken(#FFE599,20%);
 
+.top-img {
+  margin-top: 0;
+  @media @mobile {
+    margin-bottom: 20px;
+  }
+}
+
 .social-block {
   text-align: center;
   padding-bottom: 20px;
@@ -12,7 +19,10 @@
 }
 
 .title-container {
-  padding-top: 50px;
+  padding-top: 35px;
+  @media @mobile {
+    padding-top: 35px;
+  }
 }
 
 .outer {
@@ -87,6 +97,10 @@
     .fa-times-circle-o {
       color: red;
     }
+  }
+  @media @tablet {
+    width: 95%;
+    margin: auto;
   }
 }
 
