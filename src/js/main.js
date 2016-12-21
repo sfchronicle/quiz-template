@@ -10,7 +10,6 @@ var Nlist = Array.apply(null, {length: N}).map(Number.call, Number);
 // var Gradinglist = new Array(N);
 // Gradinglist = Gradinglist.fill(-1);
 var Gradinglist = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
-console.log(Gradinglist);
 
 Nlist.forEach(function(nn){
   document.getElementById("answer-box-"+nn).addEventListener("click", function(e) {
@@ -31,7 +30,6 @@ Nlist.forEach(function(nn){
       } else {
         if (questionsData[nn]["image"] && (questionsData[nn]["type"] == "answer")) {
           var str = "<i class='fa fa-times-circle-o' aria-hidden='true'></i> Wrong! "+ questionsData[nn]["answer"]+"<div class='inline-img inline-answer'><img src='http://ww2.hdnux.com/photos/54/11/64/"+questionsData[nn]["image"]+"/3/600x0.jpg'><div class='caption'>"+questionsData[nn]["caption"]+" <span class='byline'>"+questionsData[nn]["credit"]+"</span></div></div>";
-          console.log(str);
           document.querySelector("#result"+nn).innerHTML = str;
           Gradinglist[nn] = 0;
         } else {
