@@ -18,11 +18,24 @@ Nlist.forEach(function(nn){
       $(".answer"+nn).removeClass("active");
       item.className += " active";
       if (hasClass(item,"x")) {
-        document.querySelector("#result"+nn).innerHTML = "<i class='fa fa-check-circle-o' aria-hidden='true'></i> That's right! "+ questionsData[nn]["answer"];
-        Gradinglist[nn] = 1;
+        if (questionsData[nn]["image"] && (questionsData[nn]["type"] == "answer")) {
+          var str = "<i class='fa fa-check-circle-o' aria-hidden='true'></i> That's right! "+ questionsData[nn]["answer"]+"<div class='inline-img inline-answer'><img src='http://ww2.hdnux.com/photos/54/11/64/"+questionsData[nn]["image"]+"/3/600x0.jpg'><div class='caption'>"+questionsData[nn]["caption"]+" <span class='byline'>"+questionsData[nn]["credit"]+"</span></div></div>";
+          document.querySelector("#result"+nn).innerHTML = str;
+          Gradinglist[nn] = 1;
+        } else {
+          document.querySelector("#result"+nn).innerHTML = "<i class='fa fa-check-circle-o' aria-hidden='true'></i> That's right! "+ questionsData[nn]["answer"];
+          Gradinglist[nn] = 1;
+        }
       } else {
-        document.querySelector("#result"+nn).innerHTML = "<i class='fa fa-times-circle-o' aria-hidden='true'></i> Wrong! "+ questionsData[nn]["answer"];
-        Gradinglist[nn] = 0;
+        if (questionsData[nn]["image"] && (questionsData[nn]["type"] == "answer")) {
+          var str = "<i class='fa fa-times-circle-o' aria-hidden='true'></i> Wrong! "+ questionsData[nn]["answer"]+"<div class='inline-img inline-answer'><img src='http://ww2.hdnux.com/photos/54/11/64/"+questionsData[nn]["image"]+"/3/600x0.jpg'><div class='caption'>"+questionsData[nn]["caption"]+" <span class='byline'>"+questionsData[nn]["credit"]+"</span></div></div>";
+          console.log(str);
+          document.querySelector("#result"+nn).innerHTML = str;
+          Gradinglist[nn] = 0;
+        } else {
+          document.querySelector("#result"+nn).innerHTML = "<i class='fa fa-times-circle-o' aria-hidden='true'></i> Wrong! "+ questionsData[nn]["answer"];
+          Gradinglist[nn] = 0;
+        }
       }
     }
   });
@@ -44,13 +57,13 @@ document.getElementById("grade-check").addEventListener("click",function(){
         html_str +="<div class='social-block'>"
 
         // twitter link
-        html_str += "<div class='link social-final'><a id='twitter-icon' title='Share on Twitter' href='https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz&text=\"I got "+sum+" / 16! Test your geography skills by taking our quiz!\" '><i class='fa fa-twitter'></i></a></div>";
+        html_str += "<div class='link social-final'><a id='twitter-icon' title='Share on Twitter' href='https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeography-quiz&text=I got "+sum+" / 16 on the 2016 Chronicle Travel Geography Quiz! Take the test to challenge your global savvy. '><i class='fa fa-twitter'></i></a></div>";
 
         // facebook link
-        html_str += "<div class='link social-final'><a id='facebook-icon' title='Share on Facebook' href='#' target='_blank' onclick='window.open(\"https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz\", \"facebook-share-dialog\", \"width=626,height=436\"); return false;'><i class='fa fa-facebook'></i></a></div>";
+        html_str += "<div class='link social-final'><a id='facebook-icon' title='Share on Facebook' href='#' target='_blank' onclick='window.open(\"https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeography-quiz\", \"facebook-share-dialog\", \"width=626,height=436\"); return false;'><i class='fa fa-facebook'></i></a></div>";
 
         // email link
-        html_str +="<div class='link social-final'><a id='mail-icon' title='Share via email' href='mailto:?subject=\"Take the quiz!\"&body=\"I got "+sum+" / 16! Test your geography skills by taking our quiz! http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz\" '><i class='fa fa-envelope' aria-hidden='true'></i></a></div>";
+        html_str +="<div class='link social-final'><a id='mail-icon' title='Share via email' href='mailto:?subject=2016 Travel Geography Quiz: Test your global savvy&body=I got "+sum+" / 16 on the 2016 Chronicle Travel Geography Quiz! Take the test to to challenge your global knowledge. http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeography-quiz'><i class='fa fa-envelope' aria-hidden='true'></i></a></div>";
 
         html_str += "</div>"
 
