@@ -43,14 +43,15 @@ document.getElementById("grade-check").addEventListener("click",function(){
         // putting in specialized sharing links
         html_str +="<div class='social-block'>"
 
-          // email link
-          html_str +="<div class='link social-final'><a id='mail-icon' title='Share via email' href='mailto:?subject=\"Take the quiz!\"&body=\"I got "+sum+" / 16! Test your geography skills by taking our quiz! http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz\" '><i class='fa fa-envelope' aria-hidden='true'></i></a></div>";
+        // twitter link
+        html_str += "<div class='link social-final'><a id='twitter-icon' title='Share on Twitter' href='https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz&text=\"I got "+sum+" / 16! Test your geography skills by taking our quiz!\" '><i class='fa fa-twitter'></i></a></div>";
 
-          // facebook link
-          html_str += "<div class='link social-final'><a id='facebook-icon' title='Share on Facebook' href='#' target='_blank' onclick='window.open(\"https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz\", \"facebook-share-dialog\", \"width=626,height=436\"); return false;'><i class='fa fa-facebook'></i></a></div>";
+        // facebook link
+        html_str += "<div class='link social-final'><a id='facebook-icon' title='Share on Facebook' href='#' target='_blank' onclick='window.open(\"https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz\", \"facebook-share-dialog\", \"width=626,height=436\"); return false;'><i class='fa fa-facebook'></i></a></div>";
 
-          // twitter link
-          html_str += "<div class='link social-final'><a id='twitter-icon' title='Share on Twitter' href='https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz&text=\"I got "+sum+" / 16! Test your geography skills by taking our quiz!\" '><i class='fa fa-twitter'></i></a></div>";
+        // email link
+        html_str +="<div class='link social-final'><a id='mail-icon' title='Share via email' href='mailto:?subject=\"Take the quiz!\"&body=\"I got "+sum+" / 16! Test your geography skills by taking our quiz! http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fgeoquiz\" '><i class='fa fa-envelope' aria-hidden='true'></i></a></div>";
+
         html_str += "</div>"
 
       }

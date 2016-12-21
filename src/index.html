@@ -29,6 +29,24 @@
         <div class="deck">Sixteen questions on physical, political and cultural geography to challenge your global savvy &mdash; and to share a few fun facts.</div>
         <p class="author">By John Flinn and Spud Hilton</a></p>
         <p class="date">December 2016</p>
+        <div class="top-social-container">
+          <div class="link top-social">
+            <a id="twitter-icon" title="Share on Twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F<%= grunt.data.json.project.slug %>&text=<%= grunt.data.json.project.twitter_text %>&hashtags=<%= grunt.data.json.project.hashtag %>">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </div>
+          <div class="link top-social">
+            <a id="facebook-icon" title="Share on Facebook" href="#" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F<%= grunt.data.json.project.slug %>', 'facebook-share-dialog', 'width=626,height=436'); return false;">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </div>
+          <div class="link top-social">
+            <a id="mail-icon" title="Share via email" href="mailto:?subject=<%= grunt.data.json.project.title %>&body=<%= grunt.data.json.project.description %>%0A%0Ahttp%3A%2F%2Fprojects.sfchronicle.com%2F2016%2F<%= grunt.data.json.project.slug %>">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+
+        </div>
       </div>
 
       <div class="quiz-container">
@@ -41,6 +59,13 @@
           <% } else { %>
             <div class="question"><span class="qnum"><%=qdx+1%></span><%=q.question%></div>
           <% } %>
+          <% if (q.image && q.type == "question") { %>
+            <div class="inline-img">
+              <img src="http://ww2.hdnux.com/photos/54/11/64/<%=q.image%>/3/2000x1000.jpg">
+              <div class="caption"><%=q.caption%> <span class="byline"><%=q.credit%></span></div>
+            </div>
+          <% } %>
+
           <div id="answer-box-<%=q.id%>">
             <% csv.spud_answers_data.forEach(function(a,adx) { %>
               <% if (a.id == q.id){ %>

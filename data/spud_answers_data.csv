@@ -55,5 +55,5 @@ id,num,answer,correct
 14,B,California,x
 14,C,Colorado,
 14,D,Alaska,
-15,A,TRUE,x
-15,B,FALSE,
+15,A,True,x
+15,B,False,

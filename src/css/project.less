@@ -1,6 +1,17 @@
 @yellow: #FFE599;
 @dark-yellow: darken(#FFE599,20%);
 
+.top-social-container {
+  text-align: center;
+  margin-bottom: 30px;
+  @media @mobile {
+    margin-bottom: 20px;
+  }
+  .top-social {
+    font-size: 22px;
+  }
+}
+
 .top-img {
   margin-top: 0;
   @media @mobile {
@@ -44,8 +55,11 @@
     font-size: 16px;
     text-align: left;
     padding-bottom: 50px;
+    max-width: 700px;
+    margin: auto;
     @media @mobile {
       padding-bottom: 30px;
+      font-size: 14px;
     }
   }
   .question {
@@ -58,10 +72,14 @@
       padding-right: 15px;
       font-family: @bold-graphics;
       font-size: 25px;
+      @media @mobile {
+        font-size: 20px;
+      }
     }
     @media @mobile {
       padding: 0 10px;
       padding-bottom: 10px;
+      font-size: 16px;
     }
   }
   .answer {
@@ -167,6 +185,7 @@
   border-radius: 4px;
   padding: 4px;
   width: 300px;
+  cursor: pointer;
   &:hover {
     background: @dark-yellow;
     color: white;
