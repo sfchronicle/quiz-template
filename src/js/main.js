@@ -7,8 +7,10 @@ function hasClass(element, cls) {
 
 var N = questionsData.length;
 var Nlist = Array.apply(null, {length: N}).map(Number.call, Number);
-var Gradinglist = new Array(N);
-Gradinglist = Gradinglist.fill(-1);
+// var Gradinglist = new Array(N);
+// Gradinglist = Gradinglist.fill(-1);
+var Gradinglist = [-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
+console.log(Gradinglist);
 
 Nlist.forEach(function(nn){
   document.getElementById("answer-box-"+nn).addEventListener("click", function(e) {
